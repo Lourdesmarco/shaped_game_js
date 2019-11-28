@@ -5,7 +5,7 @@ class Player extends Character {
 
     die () {
         if (!this.dead) {
-            this.myImage.src = "assets/bueno_muerto.png";
+            this.myImage.src = "assets/square_chop.svg";
             this.dead = true;
             setTimeout(() => {
                     this.game.endGame();

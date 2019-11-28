@@ -14,7 +14,7 @@ class Enemy extends Character {
 
     die () {
         if (!this.dead) {
-            this.myImage.src = "assets/malo_muerto.png";
+            this.myImage.src = "assets/triangle_starred.svg";
             this.dead = true;
             setTimeout(() => {
                     this.game.removeEnemy();

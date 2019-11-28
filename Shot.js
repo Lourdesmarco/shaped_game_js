@@ -5,8 +5,9 @@ class Shot {
         this.type = character instanceof Player ? "PLAYER" : "ENEMY";
         this.height = SHOT_HEIGHT * this.game.width / 100;
         this.width = SHOT_WIDTH * this.game.width / 100;
-        this.myImage = new Image(this.width, this.height);
-        this.myImage.src = this.type === "PLAYER" ? "assets/shot1.png" : "assets/shot2.png";
+        //this.myImage = new Image(this.width, this.height);
+        this.myImage = new Image(40, 40);
+        this.myImage.src = this.type === "PLAYER" ? "assets/star.svg" : "assets/circle.svg";
         this.myImage.style.position = "absolute";
         this.x = character.x;
         this.y = character.y;

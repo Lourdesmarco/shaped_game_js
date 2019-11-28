@@ -1,6 +1,7 @@
 class Game {
     constructor () {
         this.started = false;
+        this.paused = false;
         this.ended = false;
         this.keyPressed = undefined;
         this.width = 0;
@@ -27,12 +28,35 @@ class Game {
                 width = PLAYER_WIDTH * this.width / 100,
                 x = this.width / 2 - width,
                 y = this.height - height,
-                myImage = new Image(width, height);
+                //myImage = new Image(width, height);
+                myImage = new Image(170, 70);
 
-            myImage.src = "assets/bueno.png";
+            myImage.src = "assets/square.svg";
             this.player = new Player(this, width, height, x, y, PLAYER_SPEED, myImage);
-            setInterval(() => this.update(), 50);
+            
+            let iconbt = document.createElement("i");
+            iconbt.classList.add("material-icons");
+            iconbt.id = "BTpause";
+            iconbt.innerText = "pause_circle_outline";
+            iconbt.style.position = "absolute";
+            iconbt.style.top = "20px";
+            iconbt.style.right = "20px";
+            iconbt.style.fontSize = "40px";
+            document.body.appendChild(iconbt);
+            
+            iconbt.addEventListener("click", () => {                
+                this.pause();
+                document.querySelector("#pausedGame").style.setProperty("display", "flex");
+            });
+
+            setInterval(() => {if (!this.paused) {this.update()}}, 50);
         }
+    }
+    // new code
+    pause () {
+       
+        this.paused = !this.paused;
+       
     }
 
     shoot (character) {
@@ -140,16 +164,18 @@ class Game {
     }
 
     update () {
-        if (!this.ended) {
+        if (!this.ended && !this.paused) {
             this.player.update();
             if (this.enemy === undefined) {
                 const height = ENEMY_HEIGHT * this.width / 100,
                     width = ENEMY_WIDTH * this.width / 100,
                     x = getRandomNumber(this.width - width),
                     y = 0,
-                    myImage = new Image(width, height);
-                myImage.src = "assets/malo.png";
+                    //myImage = new Image(width, height);
+                    myImage = new Image(170, 70);
+                myImage.src = "assets/triangle.svg";
                 this.enemy = new Enemy(this, width, height, x, y, ENEMY_SPEED, myImage);
+                
             }
             this.enemy.update();
             this.playerShots.forEach((shot) => {

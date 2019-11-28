@@ -1,8 +1,90 @@
-html {
-  background: url(assets/fondo.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+:root {
+  /* theme 1 */
+  --pink: #F162C1;
+  --green: #32F5D2;
+  --blue: #30ECF8;
+  --gray: #586465;
+  --grayLight: #869FA0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
   overflow: hidden;
+  height: 100%;
+  font-family: 'Nunito', sans-serif;
+}
+#menu, #settings, #themes, #leaderboard,#pausedGame{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#settings, #themes, #leaderboard{
+  display: none;
+}
+
+ul{
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+li{
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn{
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  min-width: 200px;
+}
+
+.btn-primary{
+  background-color: var(--pink);
+  color: white;
+}
+
+.btn-secondary{
+  background-color: white;
+  color: var(--gray);
+  border: 3px solid var(--gray);
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+#pausedGame{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.97;
+  background-color: var(--gray);
+  z-index: 9999;
+  display: none;
 }
