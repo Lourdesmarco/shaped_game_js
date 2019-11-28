@@ -1,1 +1,1 @@
-# js_shooter_game
+# shaped_game_js
