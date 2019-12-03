@@ -53,10 +53,8 @@ class Game {
         }
     }
     // new code
-    pause () {
-       
-        this.paused = !this.paused;
-       
+    pause () {       
+        this.paused = !this.paused;       
     }
 
     shoot (character) {

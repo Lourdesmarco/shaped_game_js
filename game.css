@@ -1,8 +1,8 @@
 :root {
-  /* theme 1 */
-  --pink: #F162C1;
-  --green: #32F5D2;
-  --blue: #30ECF8;
+  /* default - theme 1 */
+  --color1: #F162C1;
+  --color2: #32F5D2;
+  --color3: #30ECF8;
   --gray: #586465;
   --grayLight: #869FA0;
 }
@@ -26,6 +26,7 @@ html, body {
   display: none;
 }
 
+
 ul{
   display: flex;
   list-style: none;
@@ -36,24 +37,28 @@ li{
   cursor: pointer;
 }
 
+/* buttons */
 .btn{
   height: 40px;
   border: none;
   border-radius: 5px;
   min-width: 200px;
+  margin-top: 20px;
 }
 
 .btn-primary{
-  background-color: var(--pink);
+  background-color: var(--color1);
   color: white;
 }
 
 .btn-secondary{
   background-color: white;
-  color: var(--gray);
-  border: 3px solid var(--gray);
+  color: var(--color1);
+  border: 3px solid var(--color1);
 }
 
+
+/* icons */
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;

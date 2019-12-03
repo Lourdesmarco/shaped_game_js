@@ -31,10 +31,10 @@ window.onload = function() {
     // buttons
     let start = document.querySelector("#startGame");
     const game = new Game();
-
+    
+    //Start Game
     start.addEventListener("click", () => {
-        menu.style.setProperty("display", "none");
-        
+        menu.style.setProperty("display", "none");        
         game.start();
     });
 
@@ -48,15 +48,12 @@ window.onload = function() {
         if (event.target.classList.contains('menu_item')) {
             menu.style.setProperty("display", "none");
             document.querySelector("#"+ event.target.dataset.view).style.setProperty("display", "flex");
-        }
+        }  
+        //backToGame
         if (event.target.classList.contains('backToGame')) {
             document.querySelector("#pausedGame").style.setProperty("display", "none");
             game.pause();
-            //menu.style.setProperty("display", "none");
-            //document.querySelector("#"+ event.target.dataset.view).style.setProperty("display", "flex");
         }
-
-        //backToGame
         
     }, false);
 };

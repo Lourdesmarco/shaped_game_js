@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shooter Game</title>
+    <title>Shapedu Game</title>
     <script src="Game.js" type="text/javascript"></script>
     <script src="Character.js" type="text/javascript"></script>
     <script src="Player.js" type="text/javascript"></script>
@@ -31,16 +31,17 @@
     </div>
 
     <div id="pausedGame">
-            <label for="">Music</label><input type="checkbox">
-            <label for="">Sounds</label><input type="checkbox">
-            <button class="btn btn-primary backToGame">Back to game</button>
+        <h2>Paused Game</h2>
+        <label for="music1"><input type="checkbox" name="music1" checked>Music background</label>
+        <button class="btn btn-primary backToGame">Back to game</button>
+        <button class="btn btn-secondary">Quit the game</button>
     </div>
 
     <div id="settings">
-        <h2>Settings</h2>
-        <label for="">Music</label><input type="checkbox">
-        <label for="">Sounds</label><input type="checkbox">
+        <h2>Settings</h2>        
+        <label for="music2"><input type="checkbox" name="music2" checked>Music background</label>
         <button class="btn btn-secondary back">Back</button>
+        
     </div>
 
     <div id="themes">
@@ -53,5 +54,9 @@
         <h2>Leaderboard</h2>
         <button class="btn btn-secondary back">Back</button>
     </div>
+    <!--<embed name="GoodEnough" src="assets/guitarminiatureno1indmajor.mp3" loop="false" hidden="true" autoplay="true">-->
+        <audio id="musicplayer" autoplay loop>
+            <source src="assets/guitarminiatureno1indmajor.mp3">
+        </audio>
 </body>
 </html>
